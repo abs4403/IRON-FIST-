@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yoga Flows — IRONFIST</title>
+<meta name="description" content="IRONFIST yoga floor: vinyasa, power, yin and restorative sessions with a sample flow sequence.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Scoped to this page only — extends the shared design system for the pose library */
+  .jumplinks{ display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2.6rem; }
+  .jumplinks a{
+    font-size:0.82rem; color:var(--ink-dim); border:1px solid var(--line);
+    padding:0.45em 1em; border-radius:20px; font-family:var(--body);
+  }
+  .jumplinks a:hover{ border-color:var(--sage); color:var(--ink); }
+  .bodypart-heading{
+    font-family:var(--display); font-size:1rem; letter-spacing:0.02em;
+    color:var(--ink-faint); margin:0 0 1rem; scroll-margin-top:90px;
+  }
+  .bodypart-block{ margin-bottom:2.6rem; }
+  .bodypart-block:last-child{ margin-bottom:0; }
+  .demo-link{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:0.9em; font-size:0.83rem; color:var(--sage);
+    border-bottom:1px solid var(--sage-dim); padding-bottom:2px;
+  }
+  .demo-link:hover{ color:var(--ink); border-color:var(--ink); }
+  .pose-illus{
+    width:100%; height:92px; display:flex; align-items:center; justify-content:center;
+    margin-bottom:1rem; background:var(--bg-alt); border:1px solid var(--line-soft);
+    border-radius:2px;
+  }
+  .pose-illus svg{ width:84px; height:76px; overflow:visible; }
+  .pose-illus svg .pi-line{ fill:none; stroke:var(--sage); stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
+  .pose-illus svg .pi-head{ fill:var(--sage); }
+  .pose-illus svg .pi-floor{ stroke:var(--line); stroke-width:2; stroke-dasharray:3 4; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">IRON<span>FIST</span></a>
+    <nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gym.html">Gym</a>
+      <a href="yoga.html" aria-current="page">Yoga</a>
+      <a href="calculator.html">Calorie Calculator</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:40px;">
+  <div class="wrap" style="grid-template-columns:1fr;">
+    <div>
+      <div class="hero-kicker">Yoga floor</div>
+      <h1 class="hero-split"><span class="b">SLOW DOWN,</span><br>ON PURPOSE.</h1>
+      <p class="lede">Four styles across the week, from a sweat-building power class to a floor-based yin session. Come straight from a lift, or come on your own.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Styles on offer</div>
+        <h2>Find your class</h2>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <span class="meta">45 min</span>
+        <h3>Vinyasa Flow</h3>
+        <p>Breath-linked movement, building heat through sun salutations and standing sequences.</p>
+        <a class="demo-link" href="https://www.youtube.com/results?search_query=vinyasa+flow+yoga+class+full+video" target="_blank" rel="noopener">▶ Watch class</a>
+      </div>
+      <div class="card">
+        <span class="meta">50 min</span>
+        <h3>Power Yoga</h3>
+        <p>A stronger, faster-paced flow with longer holds — the closest thing to a gym session on the mat.</p>
+        <a class="demo-link" href="https://www.youtube.com/results?search_query=power+yoga+class+full+video" target="_blank" rel="noopener">▶ Watch class</a>
+      </div>
+      <div class="card">
+        <span class="meta">40 min</span>
+        <h3>Yin &amp; Restorative</h3>
+        <p>Long-held floor postures with props, aimed at the connective tissue and the nervous system.</p>
+        <a class="demo-link" href="https://www.youtube.com/results?search_query=yin+restorative+yoga+class+full+video" target="_blank" rel="noopener">▶ Watch class</a>
+      </div>
+      <div class="card">
+        <span class="meta">30 min</span>
+        <h3>Mobility Flow</h3>
+        <p>A short session built for lifters — hips, shoulders, and spine, before or after a heavy day.</p>
+        <a class="demo-link" href="https://www.youtube.com/results?search_query=yoga+mobility+flow+for+lifters+full+video" target="_blank" rel="noopener">▶ Watch class</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Sample sequence</div>
+        <h2>A 10-minute morning flow</h2>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="num"></div>
+        <div>
+          <h3>Child's Pose</h3>
+          <p>Kneel and fold forward, arms extended. Settle here for eight slow breaths before moving.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div></div>
+        <div>
+          <h3>Cat–Cow</h3>
+          <p>On hands and knees, move between arching and rounding the spine with each breath, ten rounds.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div></div>
+        <div>
+          <h3>Downward Dog</h3>
+          <p>Press hips up and back. Pedal the feet to warm up the calves and hamstrings.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div></div>
+        <div>
+          <h3>Low Lunge, both sides</h3>
+          <p>Step one foot forward, sink the back hip down. Hold five breaths, then switch sides.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div></div>
+        <div>
+          <h3>Seated Forward Fold</h3>
+          <p>Sit with legs extended, fold from the hips, not the back. Close the flow here for five breaths.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Pose library</div>
+        <h2>Every pose, by body part</h2>
+      </div>
+      <p>Tap "Watch demo" on any pose for a guided video before you try it on your own.</p>
+    </div>
+
+    <div class="jumplinks">
+      <a href="#neck-shoulders">Neck &amp; shoulders</a>
+      <a href="#spine-back">Spine &amp; back</a>
+      <a href="#hips-glutes">Hips &amp; glutes</a>
+      <a href="#hamstrings-legs">Hamstrings &amp; legs</a>
+      <a href="#core-y">Core</a>
+      <a href="#full-body">Full body &amp; relaxation</a>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="neck-shoulders">Neck &amp; shoulders</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Neck &amp; shoulders</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="93" x2="92" y2="93"/><line class="pi-line" x1="63" y1="60" x2="25" y2="80"/><polyline class="pi-line" points="63,60 75,45 85,55"/><line class="pi-line" x1="63" y1="60" x2="40" y2="72"/><line class="pi-line" x1="40" y1="72" x2="25" y2="90"/><line class="pi-line" x1="40" y1="72" x2="55" y2="92"/><circle class="pi-head" cx="70" cy="60" r="7"/></svg></div>
+          <h3>Thread the Needle</h3>
+          <p>Hold 5–8 breaths per side. Releases tension across the upper back and shoulder blade.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=thread+the+needle+yoga+pose+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Neck &amp; shoulders</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-line" x1="50" y1="27" x2="50" y2="70"/><polyline class="pi-line" points="50,27 65,10 55,25"/><polyline class="pi-line" points="50,27 35,45 45,30"/><line class="pi-line" x1="50" y1="70" x2="25" y2="85"/><line class="pi-line" x1="50" y1="70" x2="75" y2="85"/><line class="pi-line" x1="65" y1="78" x2="35" y2="78"/><circle class="pi-head" cx="50" cy="20" r="7"/></svg></div>
+          <h3>Cow Face Arms</h3>
+          <p>Hold 5 breaths per side. Deep stretch through the shoulders and triceps.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=cow+face+arms+yoga+pose+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Neck &amp; shoulders</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-line" x1="50" y1="22" x2="50" y2="65"/><line class="pi-line" x1="35" y1="35" x2="60" y2="25"/><line class="pi-line" x1="65" y1="35" x2="40" y2="25"/><line class="pi-line" x1="50" y1="65" x2="40" y2="95"/><line class="pi-line" x1="50" y1="65" x2="60" y2="95"/><circle class="pi-head" cx="50" cy="15" r="7"/></svg></div>
+          <h3>Eagle Arms</h3>
+          <p>Hold 5 breaths per side. Wraps and opens the upper back between the shoulder blades.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=eagle+arms+yoga+pose+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Neck &amp; shoulders</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="85" x2="92" y2="85"/><line class="pi-line" x1="75" y1="50" x2="85" y2="75"/><line class="pi-line" x1="75" y1="50" x2="95" y2="70"/><line class="pi-line" x1="75" y1="50" x2="35" y2="72"/><line class="pi-line" x1="35" y1="72" x2="12" y2="72"/><circle class="pi-head" cx="28" cy="78" r="7"/></svg></div>
+          <h3>Puppy Pose</h3>
+          <p>Hold 1–2 minutes. Hips stay high over the knees while the chest melts toward the floor — a gentler shoulder opener than a full backbend.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=puppy+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Neck &amp; shoulders</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-line" x1="50" y1="35" x2="50" y2="75"/><line class="pi-line" x1="50" y1="75" x2="40" y2="95"/><line class="pi-line" x1="50" y1="75" x2="60" y2="95"/><line class="pi-line" x1="50" y1="45" x2="30" y2="55"/><polyline class="pi-line" points="50,45 65,30 58,20"/><circle class="pi-head" cx="42" cy="22" r="7"/></svg></div>
+          <h3>Ear-to-Shoulder Neck Stretch</h3>
+          <p>Hold 30 seconds per side. Seated or standing, tilt the ear toward the shoulder and let one hand add gentle weight — no pulling.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=ear+to+shoulder+neck+stretch+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="spine-back">Spine &amp; back</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Spine &amp; back</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="85" x2="92" y2="85"/><path class="pi-line" d="M28,50 Q49,35 70,45"/><line class="pi-line" x1="28" y1="50" x2="28" y2="80"/><line class="pi-line" x1="70" y1="45" x2="70" y2="80"/><circle class="pi-head" cx="20" cy="45" r="6"/></svg></div>
+          <h3>Cat–Cow</h3>
+          <p>10 slow rounds. Mobilises the whole spine, links breath to movement.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=cat+cow+yoga+pose+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Spine &amp; back</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="85" x2="92" y2="85"/><path class="pi-line" d="M30,80 Q40,60 55,55"/><line class="pi-line" x1="55" y1="55" x2="45" y2="80"/><line class="pi-line" x1="30" y1="80" x2="10" y2="85"/><circle class="pi-head" cx="65" cy="48" r="7"/></svg></div>
+          <h3>Cobra Pose</h3>
+          <p>Hold 5 breaths, 3 rounds. Gentle backbend that opens the chest and strengthens the lower back.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=cobra+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Spine &amp; back</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="82" x2="92" y2="82"/><path class="pi-line" d="M30,78 Q40,65 55,60"/><polyline class="pi-line" points="55,60 45,78 60,78"/><line class="pi-line" x1="30" y1="78" x2="10" y2="80"/><circle class="pi-head" cx="65" cy="55" r="7"/></svg></div>
+          <h3>Sphinx Pose</h3>
+          <p>Hold 1–3 minutes. A softer backbend than cobra, good for stiff lower backs.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=sphinx+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Spine &amp; back</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><path class="pi-line" d="M32,32 C15,50 20,75 42,72 C60,70 62,50 55,33"/><line class="pi-line" x1="30" y1="30" x2="55" y2="33"/><circle class="pi-head" cx="30" cy="26" r="7"/></svg></div>
+          <h3>Bow Pose</h3>
+          <p>Hold 5 breaths, 2–3 rounds. Deeper backbend, opens the whole front body.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=bow+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Spine &amp; back</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="80" x2="92" y2="80"/><path class="pi-line" d="M20,78 Q40,65 60,68 Q75,70 85,60"/><line class="pi-line" x1="35" y1="70" x2="25" y2="58"/><circle class="pi-head" cx="18" cy="72" r="6"/></svg></div>
+          <h3>Locust Pose</h3>
+          <p>Hold 30 seconds, 3 rounds. Lying face down, lift the chest, arms, and legs off the floor to strengthen the whole back line.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=locust+pose+salabhasana+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Spine &amp; back</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="93" x2="92" y2="93"/><line class="pi-line" x1="50" y1="90" x2="50" y2="60"/><path class="pi-line" d="M50,60 Q65,50 60,35"/><line class="pi-line" x1="60" y1="35" x2="70" y2="85"/><circle class="pi-head" cx="72" cy="30" r="7"/></svg></div>
+          <h3>Camel Pose</h3>
+          <p>Hold 5 breaths. Kneeling, reach the hands back to the heels and lift the chest — a strong, advanced backbend.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=camel+pose+ustrasana+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="hips-glutes">Hips &amp; glutes</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Hips &amp; glutes</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="93" x2="92" y2="93"/><polyline class="pi-line" points="45,70 25,75 20,60"/><line class="pi-line" x1="45" y1="70" x2="75" y2="78"/><line class="pi-line" x1="45" y1="70" x2="45" y2="40"/><line class="pi-line" x1="45" y1="40" x2="30" y2="55"/><line class="pi-line" x1="45" y1="40" x2="60" y2="55"/><circle class="pi-head" cx="45" cy="30" r="7"/></svg></div>
+          <h3>Pigeon Pose</h3>
+          <p>Hold 1–2 minutes per side. Deep hip opener, especially the outer hip and glute.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=pigeon+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hips &amp; glutes</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="88" x2="92" y2="88"/><polyline class="pi-line" points="50,65 25,60 15,75"/><line class="pi-line" x1="50" y1="65" x2="85" y2="80"/><line class="pi-line" x1="50" y1="45" x2="50" y2="65"/><line class="pi-line" x1="50" y1="45" x2="35" y2="65"/><circle class="pi-head" cx="50" cy="38" r="7"/></svg></div>
+          <h3>Lizard Pose</h3>
+          <p>Hold 1 minute per side. Opens the hip flexors and inner thigh under a low lunge.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=lizard+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hips &amp; glutes</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><polyline class="pi-line" points="50,75 30,65 45,80"/><polyline class="pi-line" points="50,75 70,65 55,80"/><line class="pi-line" x1="50" y1="75" x2="50" y2="45"/><line class="pi-line" x1="50" y1="45" x2="45" y2="78"/><line class="pi-line" x1="50" y1="45" x2="55" y2="78"/><circle class="pi-head" cx="50" cy="36" r="7"/></svg></div>
+          <h3>Butterfly Pose</h3>
+          <p>Hold 1–2 minutes. Seated, soles of the feet together, gentle inner-thigh release.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=butterfly+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hips &amp; glutes</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-line" x1="25" y1="70" x2="75" y2="70"/><line class="pi-line" x1="30" y1="78" x2="70" y2="78"/><line class="pi-line" x1="50" y1="75" x2="50" y2="45"/><line class="pi-line" x1="50" y1="45" x2="30" y2="60"/><line class="pi-line" x1="50" y1="45" x2="70" y2="60"/><circle class="pi-head" cx="50" cy="36" r="7"/></svg></div>
+          <h3>Fire Log Pose</h3>
+          <p>Hold 1–2 minutes per side. Stacked shins, a strong outer-hip and glute stretch.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=fire+log+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hips &amp; glutes</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="88" x2="92" y2="88"/><polyline class="pi-line" points="35,75 20,60 15,80"/><polyline class="pi-line" points="65,75 80,60 85,80"/><line class="pi-line" x1="35" y1="75" x2="65" y2="75"/><line class="pi-line" x1="50" y1="75" x2="50" y2="50"/><circle class="pi-head" cx="50" cy="42" r="7"/></svg></div>
+          <h3>Frog Pose</h3>
+          <p>Hold 1–3 minutes. Knees wide on the floor, a deep and intense inner-hip release — ease in slowly.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=frog+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hips &amp; glutes</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="88" x2="92" y2="88"/><line class="pi-line" x1="40" y1="80" x2="70" y2="80"/><polyline class="pi-line" points="40,80 30,55 20,50"/><polyline class="pi-line" points="70,80 80,55 90,50"/><circle class="pi-head" cx="80" cy="78" r="7"/></svg></div>
+          <h3>Happy Baby Pose</h3>
+          <p>Hold 1 minute. Lying on the back, grab the outer feet and gently rock — a playful hip and low-back release.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=happy+baby+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="hamstrings-legs">Hamstrings &amp; legs</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Hamstrings &amp; legs</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="88" x2="92" y2="88"/><line class="pi-line" x1="20" y1="85" x2="50" y2="35"/><line class="pi-line" x1="50" y1="35" x2="80" y2="85"/><circle class="pi-head" cx="32" cy="68" r="6"/></svg></div>
+          <h3>Downward Dog</h3>
+          <p>Hold 5–10 breaths. Stretches the hamstrings and calves while building shoulder strength.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=downward+dog+yoga+pose+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hamstrings &amp; legs</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="93" x2="92" y2="93"/><line class="pi-line" x1="50" y1="40" x2="40" y2="90"/><line class="pi-line" x1="50" y1="40" x2="60" y2="90"/><line class="pi-line" x1="50" y1="40" x2="50" y2="82"/><line class="pi-line" x1="50" y1="82" x2="48" y2="93"/><line class="pi-line" x1="50" y1="82" x2="52" y2="93"/><circle class="pi-head" cx="50" cy="87" r="6"/></svg></div>
+          <h3>Standing Forward Fold</h3>
+          <p>Hold 1 minute. Let the head hang heavy, knees soft if the hamstrings are tight.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=standing+forward+fold+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hamstrings &amp; legs</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="93" x2="92" y2="93"/><line class="pi-line" x1="50" y1="40" x2="20" y2="90"/><line class="pi-line" x1="50" y1="40" x2="80" y2="90"/><line class="pi-line" x1="50" y1="40" x2="50" y2="80"/><line class="pi-line" x1="50" y1="80" x2="50" y2="93"/><circle class="pi-head" cx="50" cy="85" r="6"/></svg></div>
+          <h3>Wide-Legged Forward Fold</h3>
+          <p>Hold 1 minute. Adds inner-thigh and adductor stretch to the hamstring release.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=wide+legged+forward+fold+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hamstrings &amp; legs</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="85" x2="92" y2="85"/><line class="pi-line" x1="55" y1="65" x2="15" y2="80"/><polyline class="pi-line" points="55,65 75,70 85,60"/><line class="pi-line" x1="55" y1="65" x2="30" y2="50"/><line class="pi-line" x1="30" y1="50" x2="18" y2="70"/><circle class="pi-head" cx="20" cy="45" r="6"/></svg></div>
+          <h3>Half Splits</h3>
+          <p>Hold 1 minute per side. From a low lunge, straighten the front leg to isolate the hamstring.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=half+splits+yoga+pose+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hamstrings &amp; legs</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="88" x2="92" y2="88"/><line class="pi-line" x1="30" y1="85" x2="85" y2="85"/><path class="pi-line" d="M30,85 Q40,55 70,55"/><line class="pi-line" x1="70" y1="55" x2="80" y2="82"/><circle class="pi-head" cx="72" cy="48" r="7"/></svg></div>
+          <h3>Seated Forward Fold</h3>
+          <p>Hold 1–2 minutes. Legs extended together, fold from the hips reaching for the feet — a deep, classic hamstring stretch.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=seated+forward+fold+paschimottanasana+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hamstrings &amp; legs</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="88" x2="92" y2="88"/><line class="pi-line" x1="35" y1="85" x2="85" y2="85"/><polyline class="pi-line" points="35,85 20,75 30,65"/><path class="pi-line" d="M35,85 Q45,55 75,55"/><circle class="pi-head" cx="78" cy="48" r="7"/></svg></div>
+          <h3>Head-to-Knee Pose</h3>
+          <p>Hold 1 minute per side. One leg extended, the other bent with the sole to the inner thigh — fold toward the straight leg.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=head+to+knee+pose+janu+sirsasana+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="core-y">Core</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Core</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-line" x1="50" y1="70" x2="35" y2="45"/><line class="pi-line" x1="50" y1="70" x2="75" y2="45"/><line class="pi-line" x1="35" y1="45" x2="55" y2="50"/><circle class="pi-head" cx="28" cy="38" r="7"/></svg></div>
+          <h3>Boat Pose</h3>
+          <p>Hold 20–40 seconds, 3 rounds. Balances on the sit bones, strengthens the deep core.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=boat+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Core</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="80" x2="92" y2="80"/><line class="pi-line" x1="25" y1="45" x2="85" y2="48"/><line class="pi-line" x1="30" y1="45" x2="30" y2="78"/><line class="pi-line" x1="82" y1="47" x2="85" y2="78"/><circle class="pi-head" cx="18" cy="43" r="6"/></svg></div>
+          <h3>Plank Pose</h3>
+          <p>Hold 30–60 seconds. Full-body engagement, shoulders stacked over wrists.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=plank+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Core</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="88" x2="92" y2="88"/><line class="pi-line" x1="20" y1="80" x2="78" y2="32"/><line class="pi-line" x1="35" y1="65" x2="35" y2="85"/><line class="pi-line" x1="65" y1="42" x2="78" y2="20"/><circle class="pi-head" cx="82" cy="28" r="7"/></svg></div>
+          <h3>Side Plank</h3>
+          <p>Hold 20–30 seconds per side. Builds oblique and shoulder stability.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=side+plank+yoga+pose+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Core</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="80" x2="92" y2="80"/><line class="pi-line" x1="30" y1="50" x2="85" y2="53"/><polyline class="pi-line" points="30,50 30,78 45,78"/><line class="pi-line" x1="82" y1="52" x2="85" y2="78"/><circle class="pi-head" cx="20" cy="48" r="6"/></svg></div>
+          <h3>Forearm Plank</h3>
+          <p>Hold 30–60 seconds. Weight on the forearms rather than the hands, taking load off the wrists.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=forearm+plank+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Core</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="80" x2="92" y2="80"/><line class="pi-line" x1="20" y1="70" x2="80" y2="65"/><line class="pi-line" x1="20" y1="70" x2="8" y2="55"/><line class="pi-line" x1="80" y1="65" x2="92" y2="50"/><circle class="pi-head" cx="12" cy="58" r="6"/></svg></div>
+          <h3>Superman Pose</h3>
+          <p>Hold 15–30 seconds, 3 rounds. Lying face down, lift arms and legs at once — builds the deep core and low back together.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=superman+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="full-body">Full body &amp; relaxation</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Full body</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="95" x2="92" y2="95"/><line class="pi-line" x1="50" y1="60" x2="40" y2="95"/><line class="pi-line" x1="50" y1="60" x2="60" y2="95"/><line class="pi-line" x1="50" y1="60" x2="50" y2="35"/><line class="pi-line" x1="50" y1="35" x2="35" y2="10"/><line class="pi-line" x1="50" y1="35" x2="65" y2="10"/><circle class="pi-head" cx="50" cy="25" r="7"/></svg></div>
+          <h3>Sun Salutation A</h3>
+          <p>3–5 rounds. A linked sequence that warms up the whole body through the full range of motion.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=sun+salutation+a+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Full body</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="93" x2="92" y2="93"/><line class="pi-line" x1="50" y1="55" x2="25" y2="93"/><polyline class="pi-line" points="50,55 70,75 85,93"/><line class="pi-line" x1="20" y1="55" x2="80" y2="55"/><circle class="pi-head" cx="50" cy="45" r="7"/></svg></div>
+          <h3>Warrior II</h3>
+          <p>Hold 30–60 seconds per side. Front knee bent over the ankle, arms reaching wide, gaze over the front hand — builds leg strength and stamina.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=warrior+2+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Full body</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="93" x2="92" y2="93"/><line class="pi-line" x1="50" y1="35" x2="50" y2="70"/><line class="pi-line" x1="50" y1="70" x2="45" y2="93"/><polyline class="pi-line" points="50,70 65,80 60,60"/><line class="pi-line" x1="50" y1="30" x2="35" y2="15"/><line class="pi-line" x1="50" y1="30" x2="65" y2="15"/><circle class="pi-head" cx="50" cy="25" r="7"/></svg></div>
+          <h3>Tree Pose</h3>
+          <p>Hold 30–60 seconds per side. Standing leg strong, other foot pressed to the inner thigh, hands overhead — a classic balance pose.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=tree+pose+vrksasana+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Relaxation</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="85" x2="92" y2="85"/><line class="pi-line" x1="70" y1="70" x2="80" y2="85"/><line class="pi-line" x1="70" y1="70" x2="90" y2="80"/><line class="pi-line" x1="70" y1="70" x2="40" y2="80"/><line class="pi-line" x1="40" y1="80" x2="15" y2="80"/><circle class="pi-head" cx="28" cy="82" r="7"/></svg></div>
+          <h3>Child's Pose</h3>
+          <p>Hold 1–3 minutes. A resting pose to return to any time during a flow.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=childs+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Relaxation</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-line pi-floor" x1="28" y1="20" x2="28" y2="85"/><line class="pi-line" x1="30" y1="80" x2="70" y2="80"/><line class="pi-line" x1="30" y1="80" x2="30" y2="30"/><line class="pi-line" x1="65" y1="80" x2="80" y2="90"/><circle class="pi-head" cx="80" cy="78" r="7"/></svg></div>
+          <h3>Legs-Up-The-Wall</h3>
+          <p>Hold 5–15 minutes. Passive inversion that calms the nervous system and eases tired legs.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=legs+up+the+wall+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Relaxation</span>
+          <div class="pose-illus"><svg viewBox="0 0 100 100"><line class="pi-floor" x1="8" y1="88" x2="92" y2="88"/><line class="pi-line" x1="35" y1="70" x2="75" y2="70"/><line class="pi-line" x1="35" y1="70" x2="20" y2="85"/><line class="pi-line" x1="35" y1="70" x2="15" y2="75"/><line class="pi-line" x1="75" y1="70" x2="60" y2="85"/><line class="pi-line" x1="75" y1="70" x2="80" y2="60"/><circle class="pi-head" cx="85" cy="68" r="7"/></svg></div>
+          <h3>Corpse Pose (Savasana)</h3>
+          <p>Hold 5–10 minutes. The final resting pose to close out any practice.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=savasana+corpse+pose+yoga+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>IRONFIST — strength and stillness, on one floor.</div>
+    <div><a href="index.html">Back to home</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
