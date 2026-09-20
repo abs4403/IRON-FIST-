@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calorie Calculator — IRONFIST</title>
+<meta name="description" content="Work out your daily calorie target and log meals against it. Saved locally in your browser.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">IRON<span>FIST</span></a>
+    <nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gym.html">Gym</a>
+      <a href="yoga.html">Yoga</a>
+      <a href="calculator.html" aria-current="page">Calorie Calculator</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:40px;">
+  <div class="wrap" style="grid-template-columns:1fr;">
+    <div>
+      <div class="hero-kicker">Calorie calculator</div>
+      <h1 class="hero-split"><span class="a">KNOW</span> THE <span class="b">NUMBER.</span></h1>
+      <p class="lede">Enter your stats to get a daily calorie target, then log meals through the day to see how you're tracking against it. Everything below is stored only in this browser, on this device.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Step one</div>
+        <h2>Your daily target</h2>
+      </div>
+    </div>
+
+    <div class="calc-grid">
+      <form id="calc-form">
+        <div class="field">
+          <label for="sex">Sex</label>
+          <div class="radio-row">
+            <label><input type="radio" name="sex" value="male" checked><span>Male</span></label>
+            <label><input type="radio" name="sex" value="female"><span>Female</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="age">Age (years)</label>
+          <input type="number" id="age" min="14" max="90" value="28" required>
+        </div>
+
+        <div class="field">
+          <label for="unit">Units</label>
+          <div class="radio-row">
+            <label><input type="radio" name="unit" value="metric" checked><span>kg / cm</span></label>
+            <label><input type="radio" name="unit" value="imperial"><span>lb / in</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="weight" id="weight-label">Weight (kg)</label>
+          <input type="number" id="weight" min="1" step="0.1" value="75" required>
+        </div>
+
+        <div class="field">
+          <label for="height" id="height-label">Height (cm)</label>
+          <input type="number" id="height" min="1" step="0.1" value="178" required>
+        </div>
+
+        <div class="field">
+          <label for="activity">Activity level</label>
+          <select id="activity">
+            <option value="1.2">Sedentary — desk job, little exercise</option>
+            <option value="1.375">Light — exercise 1–3 days/wk</option>
+            <option value="1.55" selected>Moderate — exercise 3–5 days/wk</option>
+            <option value="1.725">Heavy — exercise 6–7 days/wk</option>
+            <option value="1.9">Athlete — training twice a day</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="goal">Goal</label>
+          <select id="goal">
+            <option value="-500">Lose fat (−500 kcal/day)</option>
+            <option value="-250">Lose fat, slowly (−250 kcal/day)</option>
+            <option value="0" selected>Maintain weight</option>
+            <option value="250">Gain muscle, slowly (+250 kcal/day)</option>
+            <option value="500">Gain muscle (+500 kcal/day)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-iron">Calculate my target</button>
+      </form>
+
+      <div class="result-panel">
+        <div class="result-sub">Daily calorie target</div>
+        <div class="result-num" id="result-target">—</div>
+        <div class="result-row"><span>BMR (base metabolic rate)</span><b id="result-bmr">—</b></div>
+        <div class="result-row"><span>TDEE (maintenance)</span><b id="result-tdee">—</b></div>
+        <div class="result-row"><span>Goal adjustment</span><b id="result-goal">—</b></div>
+        <p style="margin-top:1.2rem; font-size:0.85rem;">Estimated using the Mifflin–St Jeor formula. Treat this as a starting point, not a medical prescription — adjust based on how your weight actually moves over a few weeks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Step two</div>
+        <h2>Log today's food</h2>
+      </div>
+      <p>Your target: <b id="log-target-echo">set a target above</b></p>
+    </div>
+
+    <form class="log-add" id="log-form">
+      <input type="text" id="food-name" placeholder="Food or meal" required>
+      <input type="number" id="food-cals" placeholder="Calories" min="0" required>
+      <input type="text" id="food-time" placeholder="Time (optional)">
+      <button type="submit" class="btn btn-sage">Add</button>
+    </form>
+
+    <table class="log-table" id="log-table">
+      <thead>
+        <tr><th>Food</th><th>Time</th><th style="text-align:right;">Calories</th><th></th></tr>
+      </thead>
+      <tbody id="log-body">
+      </tbody>
+    </table>
+    <div id="log-empty" class="log-empty">Nothing logged yet today.</div>
+
+    <div class="log-total">
+      <span>Eaten today</span>
+      <span id="log-total-num">0 kcal</span>
+    </div>
+    <div class="result-row" style="border-top:none;">
+      <span>Remaining against target</span>
+      <b id="log-remaining">—</b>
+    </div>
+
+    <div style="margin-top:1.6rem;">
+      <button id="log-clear" class="btn btn-outline" type="button">Clear today's log</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>IRONFIST — strength and stillness, on one floor.</div>
+    <div><a href="index.html">Back to home</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="calculator.js"></script>
+</body>
+</html>
