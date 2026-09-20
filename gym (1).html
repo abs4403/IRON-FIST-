@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gym Programs — IRONFIST</title>
+<meta name="description" content="IRONFIST gym programming: a six-day training split with strength, push, pull, and conditioning days.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Scoped to this page only — extends the shared design system for the exercise library */
+  .jumplinks{ display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2.6rem; }
+  .jumplinks a{
+    font-size:0.82rem; color:var(--ink-dim); border:1px solid var(--line);
+    padding:0.45em 1em; border-radius:20px; font-family:var(--body);
+  }
+  .jumplinks a:hover{ border-color:var(--iron); color:var(--ink); }
+  .bodypart-heading{
+    font-family:var(--display); font-size:1rem; letter-spacing:0.02em;
+    color:var(--ink-faint); margin:0 0 1rem; scroll-margin-top:90px;
+  }
+  .bodypart-block{ margin-bottom:2.6rem; }
+  .bodypart-block:last-child{ margin-bottom:0; }
+  .demo-link{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:0.9em; font-size:0.83rem; color:var(--sage);
+    border-bottom:1px solid var(--sage-dim); padding-bottom:2px;
+  }
+  .demo-link:hover{ color:var(--ink); border-color:var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">IRON<span>FIST</span></a>
+    <nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gym.html" aria-current="page">Gym</a>
+      <a href="yoga.html">Yoga</a>
+      <a href="calculator.html">Calorie Calculator</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:40px;">
+  <div class="wrap" style="grid-template-columns:1fr;">
+    <div>
+      <div class="hero-kicker">Gym floor</div>
+      <h1 class="hero-split"><span class="a">SIX DAYS.</span><br>ONE SPLIT.</h1>
+      <p class="lede">A push/pull/legs split run twice a week, with a conditioning finisher on the back half. Swap accessories as needed — keep the main lifts.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Weekly split</div>
+        <h2>Training week</h2>
+      </div>
+    </div>
+    <div class="day-list">
+      <div class="day-row"><span class="day">Mon</span><span class="focus">Push — bench, overhead press, triceps</span><span class="tag">Strength</span></div>
+      <div class="day-row"><span class="day">Tue</span><span class="focus">Pull — deadlift, rows, biceps</span><span class="tag">Strength</span></div>
+      <div class="day-row"><span class="day">Wed</span><span class="focus">Legs — squat, lunges, calves</span><span class="tag">Strength</span></div>
+      <div class="day-row"><span class="day">Thu</span><span class="focus">Conditioning — intervals, sled, carries</span><span class="tag">Conditioning</span></div>
+      <div class="day-row"><span class="day">Fri</span><span class="focus">Push — incline press, dips, shoulders</span><span class="tag">Strength</span></div>
+      <div class="day-row"><span class="day">Sat</span><span class="focus">Pull — front squat, rows, core</span><span class="tag">Strength</span></div>
+      <div class="day-row"><span class="day">Sun</span><span class="focus">Rest, or an easy yoga flow</span><span class="tag">Recovery</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Programs by goal</div>
+        <h2>Pick a focus</h2>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <span class="meta">Strength</span>
+        <h3>Iron Base</h3>
+        <p>Five main lifts, 4–6 reps, three working sets. Built to move your squat, bench, and deadlift over 12 weeks.</p>
+      </div>
+      <div class="card">
+        <span class="meta">Hypertrophy</span>
+        <h3>Volume Block</h3>
+        <p>Higher rep ranges, more accessory work, shorter rests. For adding size once your base numbers are set.</p>
+      </div>
+      <div class="card">
+        <span class="meta">Conditioning</span>
+        <h3>Engine Room</h3>
+        <p>Sled pushes, intervals, and carries twice a week to build a work capacity your lifts can draw on.</p>
+      </div>
+      <div class="card">
+        <span class="meta">Mobility</span>
+        <h3>Reset Session</h3>
+        <p>A short joint-by-joint mobility routine to run before heavy sessions or on rest days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Exercise library</div>
+        <h2>Every lift, by body part</h2>
+      </div>
+      <p>Tap "Watch demo" on any exercise for a proper-form video before you load the bar.</p>
+    </div>
+
+    <div class="jumplinks">
+      <a href="#chest">Chest</a>
+      <a href="#shoulders">Shoulders</a>
+      <a href="#triceps">Triceps</a>
+      <a href="#back">Back</a>
+      <a href="#biceps">Biceps</a>
+      <a href="#rear-delts-traps">Rear delts &amp; traps</a>
+      <a href="#quads">Quads</a>
+      <a href="#hamstrings">Hamstrings</a>
+      <a href="#glutes">Glutes</a>
+      <a href="#calves">Calves</a>
+      <a href="#core">Core</a>
+    </div>
+
+    <!-- PUSH -->
+    <h3 style="color:var(--iron); margin-bottom:1.6rem;">Push day</h3>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="chest">Chest</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Chest</span>
+          <h3>Barbell Bench Press</h3>
+          <p>3–4 sets of 6–10 reps. The main horizontal press for chest, front delts, and triceps.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=barbell+bench+press+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Chest</span>
+          <h3>Incline Dumbbell Press</h3>
+          <p>3 sets of 8–12 reps. Targets the upper chest more than a flat press.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=incline+dumbbell+press+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Chest</span>
+          <h3>Push-Up</h3>
+          <p>3 sets to near failure. Bodyweight chest and core work — scale with feet elevation.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=push+up+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Chest</span>
+          <h3>Dumbbell Fly</h3>
+          <p>3 sets of 10–15 reps. Isolation move for chest width, light and controlled.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=dumbbell+fly+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Chest</span>
+          <h3>Cable Crossover</h3>
+          <p>3 sets of 12–15 reps. Constant tension finisher for the inner chest.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=cable+crossover+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="shoulders">Shoulders</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Shoulders</span>
+          <h3>Overhead Press</h3>
+          <p>3–4 sets of 5–8 reps. The main vertical press — standing, strict.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=overhead+press+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Shoulders</span>
+          <h3>Lateral Raise</h3>
+          <p>3 sets of 12–15 reps. Builds width through the side delt.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=dumbbell+lateral+raise+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Shoulders</span>
+          <h3>Arnold Press</h3>
+          <p>3 sets of 8–10 reps. Rotational press that hits all three delt heads.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=arnold+press+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Shoulders</span>
+          <h3>Front Raise</h3>
+          <p>3 sets of 12 reps. Isolates the front delt — keep it light.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=front+raise+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="triceps">Triceps</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Triceps</span>
+          <h3>Tricep Pushdown</h3>
+          <p>3 sets of 10–15 reps. Cable finisher, keep the elbows pinned to your sides.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=tricep+pushdown+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Triceps</span>
+          <h3>Skull Crusher</h3>
+          <p>3 sets of 8–12 reps. Lying extension, EZ-bar or dumbbells.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=skull+crusher+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Triceps</span>
+          <h3>Dips</h3>
+          <p>3 sets to near failure. Bodyweight or weighted, leans forward slightly for more chest.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=tricep+dips+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Triceps</span>
+          <h3>Overhead Tricep Extension</h3>
+          <p>3 sets of 10–12 reps. Stretches the long head more than pushdowns.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=overhead+tricep+extension+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL -->
+    <h3 style="color:var(--iron); margin:2.8rem 0 1.6rem;">Pull day</h3>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="back">Back</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Back</span>
+          <h3>Deadlift</h3>
+          <p>3–5 sets of 3–6 reps. The main hinge — builds the whole posterior chain.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=barbell+deadlift+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Back</span>
+          <h3>Barbell Row</h3>
+          <p>3–4 sets of 6–10 reps. Horizontal pull for back thickness.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=barbell+row+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Back</span>
+          <h3>Lat Pulldown</h3>
+          <p>3 sets of 10–12 reps. Vertical pull, good pull-up regression.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=lat+pulldown+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Back</span>
+          <h3>Pull-Up</h3>
+          <p>3 sets to near failure. Bodyweight vertical pull, add weight once easy.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=pull+up+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Back</span>
+          <h3>Seated Cable Row</h3>
+          <p>3 sets of 10–12 reps. Controlled horizontal pull, squeeze at the back.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=seated+cable+row+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="biceps">Biceps</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Biceps</span>
+          <h3>Barbell Curl</h3>
+          <p>3 sets of 8–12 reps. The main biceps builder — strict, no swinging.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=barbell+curl+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Biceps</span>
+          <h3>Dumbbell Hammer Curl</h3>
+          <p>3 sets of 10–12 reps. Neutral grip, hits the brachialis and forearm too.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=hammer+curl+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Biceps</span>
+          <h3>Concentration Curl</h3>
+          <p>3 sets of 12 reps per arm. Seated, elbow braced, strict isolation.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=concentration+curl+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Biceps</span>
+          <h3>Preacher Curl</h3>
+          <p>3 sets of 10 reps. Preacher bench removes momentum from the curl.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=preacher+curl+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="rear-delts-traps">Rear delts &amp; traps</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Rear delts</span>
+          <h3>Face Pull</h3>
+          <p>3 sets of 15 reps. Cable or band — great for shoulder health on a pull day.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=face+pull+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Traps</span>
+          <h3>Barbell Shrug</h3>
+          <p>3 sets of 10–12 reps. Straight up and down, no rolling the shoulders.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=barbell+shrug+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEGS -->
+    <h3 style="color:var(--iron); margin:2.8rem 0 1.6rem;">Leg day</h3>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="quads">Quads</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Quads</span>
+          <h3>Back Squat</h3>
+          <p>3–5 sets of 5–8 reps. The main lower-body lift — bar on the back, hips and knees together.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=barbell+back+squat+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Quads</span>
+          <h3>Leg Press</h3>
+          <p>3 sets of 10–12 reps. Loads the quads with less spinal demand than a squat.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=leg+press+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Quads</span>
+          <h3>Front Squat</h3>
+          <p>3–4 sets of 5–8 reps. Bar in the front rack, more upright torso, more quad emphasis.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=front+squat+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Quads</span>
+          <h3>Walking Lunge</h3>
+          <p>3 sets of 10–12 steps per leg. Unilateral quad and glute work, good for balance too.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=walking+lunge+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Quads</span>
+          <h3>Leg Extension</h3>
+          <p>3 sets of 12–15 reps. Machine isolation, controlled through the full range.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=leg+extension+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="hamstrings">Hamstrings</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Hamstrings</span>
+          <h3>Romanian Deadlift</h3>
+          <p>3 sets of 8–10 reps. Hip hinge with a slight knee bend, stretches the hamstring under load.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=romanian+deadlift+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hamstrings</span>
+          <h3>Lying Leg Curl</h3>
+          <p>3 sets of 10–12 reps. Machine isolation for the hamstring.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=lying+leg+curl+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Hamstrings</span>
+          <h3>Good Morning</h3>
+          <p>3 sets of 8 reps. Bar on the back, hinge at the hips — start light.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=good+morning+exercise+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="glutes">Glutes</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Glutes</span>
+          <h3>Hip Thrust</h3>
+          <p>3 sets of 8–12 reps. Bar across the hips, shoulders on a bench — the top glute builder.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=barbell+hip+thrust+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Glutes</span>
+          <h3>Bulgarian Split Squat</h3>
+          <p>3 sets of 8–10 per leg. Rear foot elevated, hits the glute and quad hard.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=bulgarian+split+squat+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Glutes</span>
+          <h3>Glute Bridge</h3>
+          <p>3 sets of 12–15 reps. Bodyweight or light-loaded, a good warm-up activator too.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=glute+bridge+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="calves">Calves</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Calves</span>
+          <h3>Standing Calf Raise</h3>
+          <p>4 sets of 12–15 reps. Full stretch at the bottom, pause at the top.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=standing+calf+raise+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Calves</span>
+          <h3>Seated Calf Raise</h3>
+          <p>3 sets of 15 reps. Bent-knee position shifts emphasis to the soleus.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=seated+calf+raise+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodypart-block">
+      <h4 class="bodypart-heading" id="core">Core (any day)</h4>
+      <div class="card-grid">
+        <div class="card">
+          <span class="meta">Core</span>
+          <h3>Plank</h3>
+          <p>3 sets, hold 30–60 seconds. Straight line from shoulders to ankles.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=plank+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Core</span>
+          <h3>Hanging Leg Raise</h3>
+          <p>3 sets of 8–12 reps. Hang from a bar, lift legs without swinging.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=hanging+leg+raise+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Core</span>
+          <h3>Cable Woodchopper</h3>
+          <p>3 sets of 10–12 per side. Rotational core strength, controlled through the twist.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=cable+woodchopper+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+        <div class="card">
+          <span class="meta">Core</span>
+          <h3>Ab Rollout</h3>
+          <p>3 sets of 8–10 reps. Ab wheel or barbell — keep the hips from sagging.</p>
+          <a class="demo-link" href="https://www.youtube.com/results?search_query=ab+wheel+rollout+proper+form+tutorial" target="_blank" rel="noopener">▶ Watch demo</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>IRONFIST — strength and stillness, on one floor.</div>
+    <div><a href="index.html">Back to home</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
