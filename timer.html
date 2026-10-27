@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workout Timer — IRONFIST</title>
+<meta name="description" content="A live interval workout timer for strength circuits and HIIT — set your rounds, work and rest, and go.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Scoped to this page only — extends the shared design system for the interval timer */
+  .tm-grid{
+    display:grid; grid-template-columns:1fr 1.15fr; gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  @media (max-width:860px){ .tm-grid{ grid-template-columns:1fr; } }
+
+  .tm-setup{ background:var(--bg); padding:1.8rem; }
+  .tm-setup .field{ margin-bottom:1.1rem; }
+  .tm-setup .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .tm-presets{ display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+  .tm-preset-btn{
+    background:var(--panel); border:1px solid var(--line); color:var(--ink-dim);
+    padding:0.5em 1em; font-size:0.82rem; border-radius:20px; cursor:pointer;
+  }
+  .tm-preset-btn:hover{ border-color:var(--sage); color:var(--ink); }
+  .tm-preset-btn.active{ border-color:var(--iron); color:var(--ink); background:rgba(179,49,26,0.12); }
+
+  .tm-stage{
+    background:var(--bg); padding:2rem; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center;
+  }
+  .tm-phase{
+    font-family:var(--display); font-size:1.1rem; letter-spacing:0.04em;
+    color:var(--ink-faint); margin-bottom:0.6rem; text-transform:uppercase;
+  }
+  .tm-phase.work{ color:var(--iron); }
+  .tm-phase.rest{ color:var(--sage); }
+  .tm-phase.warmup, .tm-phase.cooldown{ color:#D8A23B; }
+  .tm-phase.done{ color:var(--sage); }
+
+  .tm-ring-wrap{ position:relative; width:240px; height:240px; margin:0.4rem 0 1.4rem; }
+  .tm-ring-wrap svg{ width:100%; height:100%; transform:rotate(-90deg); }
+  .tm-ring-bg{ fill:none; stroke:var(--line); stroke-width:10; }
+  .tm-ring-fg{ fill:none; stroke:var(--iron); stroke-width:10; stroke-linecap:round; transition:stroke-dashoffset 0.25s linear, stroke 0.25s linear; }
+  .tm-ring-fg.rest{ stroke:var(--sage); }
+  .tm-ring-fg.warmup, .tm-ring-fg.cooldown{ stroke:#D8A23B; }
+  .tm-time{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-size:3.2rem; color:var(--ink);
+  }
+  .tm-round{ color:var(--ink-faint); font-size:0.92rem; margin-bottom:1.6rem; }
+  .tm-round b{ color:var(--ink); }
+
+  .tm-controls{ display:flex; gap:0.8rem; }
+  .tm-sound-toggle{
+    margin-top:1.2rem; display:flex; align-items:center; gap:0.5em;
+    font-size:0.82rem; color:var(--ink-faint); cursor:pointer;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">IRON<span>FIST</span></a>
+    <nav class="site-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="gym.html">Gym</a>
+      <a href="yoga.html">Yoga</a>
+      <a href="calculator.html">Calorie Calculator</a>
+      <a href="timer.html" aria-current="page">Workout Timer</a>
+      <a href="form-check.html">Form Check</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:40px;">
+  <div class="wrap" style="grid-template-columns:1fr;">
+    <div>
+      <div class="hero-kicker">Interval timer</div>
+      <h1 class="hero-split"><span class="a">WORK.</span> <span class="b">REST.</span> REPEAT.</h1>
+      <p class="lede">Set your rounds, work time, and rest time, then let the timer run the clock — with a beep for every transition so you don't have to watch the screen.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Build your interval</div>
+        <h2>Set it and go</h2>
+      </div>
+    </div>
+
+    <div class="tm-grid">
+      <div class="tm-setup">
+        <div class="tm-presets" id="tm-presets">
+          <button class="tm-preset-btn" data-preset="tabata" type="button">Tabata (20/10 × 8)</button>
+          <button class="tm-preset-btn" data-preset="hiit" type="button">HIIT (40/20 × 6)</button>
+          <button class="tm-preset-btn" data-preset="strength" type="button">Strength rest (90s × 5)</button>
+          <button class="tm-preset-btn" data-preset="emom" type="button">EMOM (60/0 × 10)</button>
+        </div>
+
+        <div class="field">
+          <label for="tm-warmup">Warm-up (seconds)</label>
+          <input type="number" id="tm-warmup" min="0" max="600" value="10">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="tm-work">Work (seconds)</label>
+            <input type="number" id="tm-work" min="1" max="1800" value="40">
+          </div>
+          <div class="field">
+            <label for="tm-rest">Rest (seconds)</label>
+            <input type="number" id="tm-rest" min="0" max="1800" value="20">
+          </div>
+        </div>
+        <div class="field">
+          <label for="tm-rounds">Rounds</label>
+          <input type="number" id="tm-rounds" min="1" max="50" value="6">
+        </div>
+        <div class="field">
+          <label for="tm-cooldown">Cooldown (seconds)</label>
+          <input type="number" id="tm-cooldown" min="0" max="600" value="0">
+        </div>
+
+        <label class="tm-sound-toggle">
+          <input type="checkbox" id="tm-sound" checked>
+          <span>Sound cues on</span>
+        </label>
+      </div>
+
+      <div class="tm-stage">
+        <div class="tm-phase" id="tm-phase-label">Ready</div>
+        <div class="tm-ring-wrap">
+          <svg viewBox="0 0 120 120">
+            <circle class="tm-ring-bg" cx="60" cy="60" r="52"></circle>
+            <circle class="tm-ring-fg" id="tm-ring-fg" cx="60" cy="60" r="52"
+                    stroke-dasharray="326.7" stroke-dashoffset="0"></circle>
+          </svg>
+          <div class="tm-time" id="tm-time">00:00</div>
+        </div>
+        <div class="tm-round" id="tm-round">Set your intervals and press start.</div>
+        <div class="tm-controls">
+          <button id="tm-start" class="btn btn-iron" type="button">Start</button>
+          <button id="tm-pause" class="btn btn-outline" type="button" disabled>Pause</button>
+          <button id="tm-reset" class="btn btn-outline" type="button" disabled>Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>IRONFIST — strength and stillness, on one floor.</div>
+    <div><a href="index.html">Back to home</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="timer.js"></script>
+</body>
+</html>
